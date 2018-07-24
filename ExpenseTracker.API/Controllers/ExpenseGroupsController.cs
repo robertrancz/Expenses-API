@@ -10,14 +10,12 @@ using System.Web.Http;
 using ExpenseTracker.API.Helpers;
 using System.Web.Http.Routing;
 using System.Web;
-using System.Web.Http.Cors;
+ 
 
 namespace ExpenseTracker.API.Controllers
 {
-
- 
-     [EnableCors("*", "*", "GET,POST" )]
-      public class ExpenseGroupsController : ApiController
+     
+    public class ExpenseGroupsController : ApiController
     {
          
         IExpenseTrackerRepository _repository;
@@ -179,9 +177,9 @@ namespace ExpenseTracker.API.Controllers
         }
 
 
-  
-        [HttpPost]
+
         [Route("api/expensegroups")]
+        [HttpPost]
         public IHttpActionResult Post([FromBody]DTO.ExpenseGroup expenseGroup)
         {
             try
